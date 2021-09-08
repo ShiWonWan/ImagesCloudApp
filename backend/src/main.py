@@ -10,12 +10,9 @@ from hashlib import algorithms_available, sha256
 from sqlalchemy.dialects import mysql
 from jwt import encode
 
-UPLOAD_FOLDER = config('PATH_TO_STORE')
 ALLOWED_EXTENSIONS = {'png', 'jpg', 'jpeg'}
 
 app = create_app()
-app.config['UPLOAD_FOLDER'] = UPLOAD_FOLDER
-
 configs = config_db_mm(app)
 db = configs['db']
 ma = configs['ma']
